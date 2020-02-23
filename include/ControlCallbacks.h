@@ -11,8 +11,8 @@
 // *************************************************************************
 
 #pragma once
-#include <iostream>
-#include <cstdint>
+#include <stdio.h>
+#include <stdint.h>
 
 typedef void (*callback_t)(void);
 
