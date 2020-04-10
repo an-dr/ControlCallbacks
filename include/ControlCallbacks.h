@@ -11,8 +11,11 @@
 // *************************************************************************
 
 #pragma once
-#include <stdio.h>
 #include <stdint.h>
+#include <stdio.h>
+
+#define CMD_NONE (-1U)
+#define CMD_DONE (0)
 
 typedef void (*callback_t)(void);
 
@@ -25,6 +28,7 @@ class ControlCallbacks {
 public:
     ControlCallbacks() = default;
     ControlCallbacks(Connection_t *conns, uint32_t con_num);
+    void Init(Connection_t *conns, uint32_t con_num);
     void Poll(void);
     int Exec(uint32_t cmd);
 

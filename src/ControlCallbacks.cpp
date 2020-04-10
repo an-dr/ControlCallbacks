@@ -15,6 +15,12 @@
 ControlCallbacks::ControlCallbacks(Connection_t *conns, uint32_t con_num)
     : connections(conns), Connections_n(con_num) {}
 
+
+void ControlCallbacks::Init(Connection_t *conns, uint32_t con_num){
+    this->connections = conns;
+    this->Connections_n = con_num;
+}
+
 int ControlCallbacks::Exec(uint32_t cmd) {
     printf("[ControlCallbacks] got %lu\n", cmd);
     for (uint32_t i = 0; i < Connections_n; ++i) {
