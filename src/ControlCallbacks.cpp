@@ -22,7 +22,7 @@ void ControlCallbacks::Init(Connection_t *conns, uint32_t con_num){
 }
 
 int ControlCallbacks::Exec(uint32_t cmd) {
-    printf("[ControlCallbacks] got %lu\n", cmd);
+    printf("[ControlCallbacks] got %u\n", cmd);
     for (uint32_t i = 0; i < Connections_n; ++i) {
         if (cmd == connections[i].cmd_code) {
             connections[i].func();
